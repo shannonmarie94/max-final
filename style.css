@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+:root {
+  --bg: #f5f2e0;
+  --accent: #e5b40a;
+  --header: #b00020;
+  --text: #2f9e9d;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, li, button, input, textarea {
+  font-family: 'Shrikhand', 'Georgia', serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header, nav, footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: var(--bg);
+  padding: 1.5em 0 0.5em;
+}
+
+header h1 {
+  color: var(--header);
+  font-size: 2.5rem;
+}
+
+header h2 {
+  color: var(--text);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-top: 0.5em;
+}
+
+nav {
+  background-color: var(--accent);
+  padding: 1em 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--header);
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+section {
+  max-width: 800px;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.video-section {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.video-section iframe {
+  width: 33vw;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.bio-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  margin-bottom: 1em;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 2em auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5em;
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+  background-color: #fff;
+  color: var(--header);
+}
+
+.resume-section {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+.resume-section h3 {
+  color: var(--header);
+  margin-top: 1.5em;
+}
+
+.resume-section p,
+.resume-section li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.resume-section ul {
+  padding-left: 1.2em;
+}
+
+.resume-section .btn {
+  display: inline-block;
+  margin-top: 1.5em;
+  padding: 0.6em 1.2em;
+}
+
+.gallery-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  text-align: center;
+}
+
+.gallery-section h3 {
+  color: var(--header);
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+}
+
+.gallery-item {
+  background-color: #fff;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 1em;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.gallery-item h4 {
+  color: var(--header);
+  margin-top: 0.5em;
+}
+
+.gallery-item p {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.button-wheel {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  margin-top: 2em;
+}
+
+.spin-btn {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  background-color: var(--accent);
+  color: var(--header);
+  text-decoration: none;
+  border-radius: 50%;
+  border: 2px solid var(--header);
+  text-align: center;
+  transition: transform 0.3s ease;
+  animation: slow-spin 6s linear infinite;
+}
+
+.spin-btn:hover {
+  animation-play-state: paused;
+  background-color: var(--header);
+  color: var(--accent);
+}
+
+@keyframes slow-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+footer {
+  background-color: var(--accent);
+  color: var(--header);
+  text-align: center;
+  padding: 1em;
+  margin-top: 2em;
+}
+
+button, .btn {
+  background-color: var(--accent);
+  color: var(--header);
+  border: 2px solid var(--header);
+  padding: 0.5em 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--header);
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .video-section iframe {
+    width: 90%;
+  }
+
+  .spin-btn {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+  }
+}
